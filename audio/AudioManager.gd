@@ -80,18 +80,34 @@ func load_all_music():
 
 # Deloads (removes references for GC) all loaded sample resources (streams)
 func deload_all():
-	deload_effects()
-	deload_music()
+	deload_all_effects()
+	deload_all_music()
 
 
 # Deloads (removes references for GC) all effect streams
-func deload_effects():
+func deload_all_effects():
 	_loaded_effect_streams = {}
 
 
 # Deloads (removes references for GC) all music streams
-func deload_music():
+func deload_all_music():
 	_loaded_music_streams = {}
+
+
+# Deloads a specific effect stream/sample
+func deload_effect(audio_name):
+	if _loaded_effect_streams.erase(audio_name):
+		return
+	else:
+		push_error("No loaded effect stream found with name: " + audio_name)
+
+
+# Deloads a specific music stream/sample
+func deload_music(audio_name):
+	if _loaded_music_streams.erase(audio_name):
+		return
+	else:
+		push_error("No loaded music stream found with name: " + audio_name)
 
 
 # Converts filenames into audio_names (removes file extensions from an array of filenames)
