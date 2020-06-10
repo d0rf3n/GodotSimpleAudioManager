@@ -59,6 +59,15 @@ OR
 AudioManager.play_effect("blip")
 AudioManager.play_music("bgm")
 ```
+4. Deload resource references (for garbage collection) if needed (ex. switching scenes or whatnot).
+```
+AudioManager.deload_all()
+```
+OR
+```
+AudioManager.deload_effects()
+AudioManager.deload_music()
+```
 
 ## Examples
 See the example scene. The AudioManager is part of this example godot project.
