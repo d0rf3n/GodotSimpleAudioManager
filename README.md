@@ -46,13 +46,13 @@ AudioManager.load_music(["bgm"])
 
 OR
 ```
-  AudioManager.load_all_effects()
-  AudioManager.load_all_music()
+AudioManager.load_all_effects()
+AudioManager.load_all_music()
 ```
 
 OR
 ```
-  AudioManager.load_all()
+AudioManager.load_all()
 ```
 3. Play audio from anywhere in your project using the audio name (filename without extensions).
 ```
