@@ -65,8 +65,14 @@ AudioManager.deload_all()
 ```
 OR
 ```
-AudioManager.deload_effects()
-AudioManager.deload_music()
+AudioManager.deload_all_effects()
+AudioManager.deload_all_music()
+```
+OR (specific)
+```
+AudioManager.deload_effect("blip")
+AudioManager.deload_music("bgm")
+# Both gives a non-interrupting error if no such stream is loaded
 ```
 
 ## Examples
