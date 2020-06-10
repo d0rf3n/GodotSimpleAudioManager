@@ -78,6 +78,23 @@ func load_all_music():
 	load_music(_remove_extensions(_music_filenames))
 
 
+# Deloads (removes references for GC) all loaded sample resources (streams)
+func deload_all():
+	deload_effects()
+	deload_music()
+
+
+# Deloads (removes references for GC) all effect streams
+func deload_effects():
+	_loaded_effect_streams = {}
+
+
+# Deloads (removes references for GC) all music streams
+func deload_music():
+	_loaded_music_streams = {}
+
+
+# Converts filenames into audio_names (removes file extensions from an array of filenames)
 func _remove_extensions(filenames):
 	var basenames = []
 	for filename in filenames:
